@@ -526,3 +526,34 @@ input[type="time"] {
 #other-recipe-text {
     font-family: "Emilys Candy", serif;
 }
+
+
+@media (max-width: 600px) {
+
+    button {
+        color: black !important;
+    }
+
+    #date,
+    #time {
+        font-size: 16px;
+        padding: 10px;
+        min-height: 40px;
+        width: 140px;
+        color: black;
+        background-color: white;
+    }
+
+    #other-food-text,
+    #other-movie-text,
+    #other-activity-text,
+    #other-dessert-text,
+    #other-recipe-text {
+        width: 180px;
+        min-height: 40px;
+        padding: 8px;
+        font-size: 16px;
+        color: black;
+        background-color: white;
+    }
+}
