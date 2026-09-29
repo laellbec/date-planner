@@ -40,7 +40,7 @@ let date = document.getElementById("date");
 let time = document.getElementById("time");
 let music = document.getElementById("music");
 let smsButton = document.getElementById("sms-button");
-
+let emailButton = document.getElementById("email-button");
 
 let selectedFood = "";
 let selectedRestaurant = "";
@@ -451,4 +451,8 @@ smsButton.addEventListener("click", function() {
 
     window.location.href =
         "sms:?body=" + encodeURIComponent(message);
+});
+
+emailButton.addEventListener("click", function() {
+    window.location.href = "mailto:?subject=💕 Our Date Itinerary 💕&body=Test%20email";
 });
