@@ -1,0 +1,528 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 50%, pink, white);
+    text-align: center;
+    font-family: "Emilys Candy", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+p {
+    font-size: 24px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    font-size: 24px;
+    font-family: "Emilys Candy", serif;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #FCE8F0;
+    transition: 0.3s;
+}
+
+input[type="date"],
+input[type="time"] {
+    font-family: "Emilys Candy", serif;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: 2px solid #FFB6C1;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 40px;
+    box-sizing: border-box;
+}
+
+#other-food-text,
+#other-movie-text,
+#other-activity-text,
+#other-dessert-text,
+#other-recipe-text {
+    font-family: "Emilys Candy", serif;
+    font-size: 16px;
+    width: 180px;
+    min-height: 35px;
+    padding: 8px;
+    border: 2px solid #FFB6C1;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#yes:hover {
+    padding: 20px 30px;
+    background-color: #FFB6C1;
+    font-size: 28px;
+}
+
+#no:hover {
+
+}
+
+#invitation {
+    text-align: center;
+}
+
+#planner {
+    display: none;
+    text-align: center;
+}
+
+#planner-box {
+    background-color: white;
+    width: 600px;
+    height: 600px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #FCE8F0;
+    border-radius: 10px;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background-color: #FFB6C1;
+    border-radius: 10px;
+}
+
+#date,
+#time {
+    font-size: 28px;
+    font-family: "Emilys Candy", serif;
+    padding: 30px;
+    margin: 10px;
+    border: 2px solid #FFB6C1;
+    border-radius: 10px;
+}
+
+#date-next {
+    margin-top: 20px;
+}
+
+#date-next:hover {
+    background-color: #FFB6C1;
+    font-size: 36px;
+    padding: 30px 50px;
+}
+
+.date-time {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+#date-next {
+    margin-top: 220px;
+    padding: 20px 40px;
+    font-size: 28px;
+}
+
+.food-options {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 20px 10px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.food-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 140px;
+    border-radius: 15px;
+    transition: 0.2s ease;
+}
+
+.food-option:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    transform: scale(1.10);
+}
+
+.food-option.selected {
+    background-color: #FFB6C1;
+    border: 3px solid #FF69B4;
+}
+
+.food-option img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#step2 {
+    display: none;
+}
+
+.other-option {
+    margin-top: 30px;
+}
+
+#food-next {
+    margin-top: 50px;
+}
+
+#food-next:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    padding: 20px 20px;
+}
+
+.restaurant-input {
+    display: none;
+    width: 140px;
+    margin-top: 8px;
+    padding: 5px;
+    font-family: "Emilys Candy", serif;
+    font-size: 14px;
+    border: 1px solid #FFB6C1;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.food-option.selected .restaurant-input {
+    display: block;
+}
+
+
+
+
+
+
+.movie-options {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 20px 10px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.movie-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 140px;
+    border-radius: 15px;
+    transition: 0.2s ease;
+}
+
+.movie-option:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    transform: scale(1.10);
+}
+
+.movie-option.selected {
+    background-color: #FFB6C1;
+    border: 3px solid #FF69B4;
+}
+
+.movie-option img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#step5 {
+    display: none;
+}
+
+.other-movie-option {
+    margin-top: 30px;
+}
+
+#movie-next {
+    margin-top: 50px;
+}
+
+#movie-next:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    padding: 20px 20px;
+}
+
+#step6 {
+    display: none;
+}
+
+.final-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+
+
+.activity-options {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 20px 10px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.activity-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 140px;
+    border-radius: 15px;
+    transition: 0.2s ease;
+}
+
+.activity-option:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    transform: scale(1.10);
+}
+
+.activity-option.selected {
+    background-color: #FFB6C1;
+    border: 3px solid #FF69B4;
+}
+
+.activity-option img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#step3 {
+    display: none;
+}
+
+.other-activity-option {
+    margin-top: 30px;
+}
+
+#activity-next {
+    margin-top: 50px;
+}
+
+#activity-next:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    padding: 20px 20px;
+}
+
+
+#step3b {
+    display: none;
+}
+
+.recipe-options {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 20px;
+    justify-content: center;
+}
+
+.recipe-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 240px;
+    min-height: 200px;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    transition: 0.2s ease;
+}
+
+.recipe-option img {
+    width: 150px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.recipe-option span {
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+.recipe-option p {
+    font-size: 14px;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+
+.other-recipe-option {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.recipe-option:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    transform: scale(1.10);
+}
+
+.recipe-option.selected {
+    background-color: #FFB6C1;
+    border: 3px solid #FF69B4;
+}
+
+
+#recipe-next {
+    margin-top: -5px;
+}
+
+#recipe-next:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    padding: 20px 20px;
+}
+
+
+
+
+
+
+
+.dessert-options {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 20px 10px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.dessert-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 180px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    transition: 0.2s ease;
+}
+
+.dessert-option:hover {
+    background-color: #FFB6C1;
+    font-size: 24px;
+    transform: scale(1.10);
+}
+
+.dessert-option.selected {
+    background-color: #FFB6C1;
+    border: 3px solid #FF69B4;
+}
+
+.dessert-option img {
+    max-width: 120px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.surprise-input {
+    display: none;
+    width: 140px;
+    margin-top: 8px;
+    padding: 5px;
+    font-family: "Emilys Candy", serif;
+    font-size: 14px;
+    border: 1px solid #FFB6C1;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.dessert-option.selected .surprise-input {
+    display: block;
+}
+
+#step4 {
+    display: none;
+}
+
+.other-dessert-option {
+    margin-top: 30px;
+}
+
+#dessert-next {
+    margin-top: 50px;
+}
+
+#dessert-next:hover {
+    background-color: #FFB6C1;
+    font-size: 28px;
+    padding: 20px 20px;
+}
+
+.food-option,
+.movie-option,
+.activity-option,
+.dessert-option {
+    box-sizing: border-box;
+    min-height: 180px;
+    padding: 15px;
+}
+
+.last-question h2{
+    font-size: 36px;
+}
+#step7 {
+    display: none;
+}
+
+.itinerary {
+    text-align: left;
+    margin: 40px auto;
+    width: fit-content;
+    font-size: 22px;
+}
+
+.itinerary p {
+    margin: 15px 0;
+}
+
+#other-food-text,
+#other-movie-text,
+#other-activity-text,
+#other-dessert-text,
+#other-recipe-text {
+    font-family: "Emilys Candy", serif;
+}

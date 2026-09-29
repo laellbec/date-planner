@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Official Date Request</title>
+</head>
+<body>
+    <div id="invitation">
+        <h1>💌 Would you like to go on a date with me? 💌</h1>
+
+        <div class="buttons">
+            <button id="yes">Yes 😊</button>
+            <button id="no">No 😐</button>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("no");
+
+        let hoverCount = 0;
+
+        const noTexts = [
+            "No 😐",
+            "Are you sure?🤔",
+            "Really?😪",
+            "You can't say no to me 😘"
+        ];
+
+        noButton.addEventListener("mouseenter", function() {
+            hoverCount++;
+
+            if (hoverCount < 4) {
+                noButton.textContent = noTexts[hoverCount];
+
+                const maxX = window.innerWidth - noButton.offsetWidth;
+                const maxY = window.innerHeight - noButton.offsetHeight;
+
+                const randomX = Math.random() * maxX;
+                const randomY = Math.random() * maxY;
+
+                noButton.style.position = "fixed";
+                noButton.style.left = randomX + "px";
+                noButton.style.top = randomY + "px";
+            } else {
+                noButton.style.display = "none";
+            }
+        });
+    </script>
+
+    <div id="planner">
+        <h1>🎉Plan our date😘</h1>
+
+        <div id="planner-box">
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <div id="step1">
+                <h2>When are we going?📆</h2>
+                <div class="date-time">
+                    <input type="date" id="date">
+                    <input type="time" id="time">
+                </div>
+                <button id="date-next">Set the date!💕</button>
+            </div>
+            <div id="step2">
+                <h2>What are we eating? 🍽️</h2>
+                <div class="food-options">
+
+                    <button class="food-option" data-food="Mexican">
+                        <img src="dinner-img/taco.png">
+                        <span>Mexican</span>
+                        <input type="text" class="restaurant-input" placeholder="Specific Restaurant?">
+                    </button>
+
+                    <button class="food-option" data-food="Asian">
+                        <img src="dinner-img/sushi.png">
+                        <span>Asian</span>
+                        <input type="text" class="restaurant-input" placeholder="Specific Restaurant?">
+                    </button>
+
+                    <button class="food-option" data-food="Italian">
+                        <img src="dinner-img/spaghetti.png">
+                        <span>Italian</span>
+                        <input type="text" class="restaurant-input" placeholder="Specific Restaurant?">
+                    </button>
+
+                    <button class="food-option" data-food="Takeout">
+                        <img src="dinner-img/fries.png">
+                        <span>Takeout</span>
+                        <input type="text" class="restaurant-input" placeholder="Specific Place?">
+                    </button>
+                </div>
+
+                <div class="other-option">
+                    <input type="checkbox" id="other-food">
+                    <input type="text" id="other-food-text" placeholder="Something else..." disabled>
+                </div>
+                    
+                <button id="food-next">That's what we're eating!😋</button>
+            </div>
+
+            <div id="step3">
+                <h2>What are we doing after dinner?🎬</h2>
+                <div class="activity-options">
+
+                    <button class="activity-option" data-activity="Drinks">
+                        <img src="activity-img/drink.png">
+                        <span>Drinks🍻</span>
+                    </button>
+
+                    <button class="activity-option" data-activity="Game Night">
+                        <img src="activity-img/card.png">
+                        <span>Game Night🎲</span>
+                    </button>
+
+                    <button class="activity-option" data-activity="Bed Rot">
+                        <img src="activity-img/bed.png">
+                        <span>Bed Rot🛏️</span>
+                    </button>
+
+                    <button class="activity-option" data-activity="Baking">
+                        <img src="activity-img/cookies.png">
+                        <span>Baking🧁</span>
+                    </button>
+                </div>
+
+                <div class="other-activity-option">
+                    <input type="checkbox" id="other-activity">
+                    <input type="text" id="other-activity-text" placeholder="Something else..." disabled>
+                </div>
+                    
+                <button id="activity-next">That's what we're doing!💋</button>
+            </div>
+
+
+            <div id="step3b">
+                <h2>What are we baking together? 🍪</h2>
+
+                <div class="recipe-options">
+                    <button class="recipe-option" data-recipe="Cookies">
+                        <img src="recipe-img/cookies.jpg">
+                        <span>Cookies🍪</span>
+                        <p>Warm, gooey, and impossible to eat just one</p>
+                    </button>
+
+                    <button class="recipe-option" data-recipe="Brownies">
+                        <img src="recipe-img/brownies.jpg">
+                        <span>Brownies🍫</span>
+                        <p>Rich chocolate perfection with minimal effort</p>
+                    </button>
+
+                    <button class="recipe-option" data-recipe="Cinnamon Rolls">
+                        <img src="recipe-img/cinnamon-rolls.jpg">
+                        <span>Cinnamon Rolls😋</span>
+                        <p>Sweet cinnamon swirls with the perfect icing finish</p>
+                    </button>
+
+                    <button class="recipe-option" data-recipe="DIY Blizzards">
+                        <img src="recipe-img/blizzard.jpg">
+                        <span>DIY Blizzards🍦</span>
+                        <p>Mix your dream blizzard with all the best toppings</p>
+                    </button>
+                </div>
+
+                <div class="other-recipe-option">
+                    <input type="checkbox" id="other-recipe">
+                    <input type="text" id="other-recipe-text"
+                        placeholder="Something else..." disabled>
+                </div>
+
+                <button id="recipe-next">Let's bake it! 🧁</button>
+            </div>
+
+
+
+
+            <div id="step4">
+                <h2>What is our sweet treat?🍫</h2>
+                <div class="dessert-options">
+
+                    <button class="dessert-option" data-dessert="Dairy Queen">
+                        <img src="dessert-img/dq.svg">
+                        <span>Dairy Queen🍦</span>
+                    </button>
+
+                    <button class="dessert-option" data-dessert="Crumbl">
+                        <img src="dessert-img/crumbl.jpg">
+                        <span>Crumbl🍪</span>
+                    </button>
+
+                    <button class="dessert-option" data-dessert="Slurpees & Candy">
+                        <img src="dessert-img/slurpee.png">
+                        <span>Slurpees & Candy🍭</span>
+                    </button>
+
+                    <button class="dessert-option" data-dessert="Surprise Baking">
+                        <img src="dessert-img/baking.jpg">
+                        <span>Surprise Baking🧁</span>
+                        <input type="text" class="surprise-input" placeholder="Any Requests?">
+
+                    </button>
+                </div>
+
+                <div class="other-dessert-option">
+                    <input type="checkbox" id="other-dessert">
+                    <input type="text" id="other-dessert-text" placeholder="Something else..." disabled>
+                </div>
+                    
+                <button id="dessert-next">That's our sweet treat!🍬</button>
+            </div>
+
+            
+            <div id="step5">
+                <h2>What are we watching?🎬</h2>
+                <div class="movie-options">
+
+                    <button class="movie-option" data-movie="Dance Moms">
+                        <img src="movie-img/Abby-Lee-Miller.jpg">
+                        <span>Dance Moms🩰</span>
+                    </button>
+
+                    <button class="movie-option" data-movie="South Park">
+                        <img src="movie-img/south-park.jpg">
+                        <span>South Park🚌</span>
+                    </button>
+
+                    <button class="movie-option" data-movie="Disney Movie">
+                        <img src="movie-img/disney.png">
+                        <span>Disney🐭</span>
+                    </button>
+
+                    <button class="movie-option" data-movie="Netflix">
+                        <img src="movie-img/netflix.png">
+                        <span>Netflix🎥</span>
+                    </button>
+                </div>
+
+                <div class="other-movie-option">
+                    <input type="checkbox" id="other-movie">
+                    <input type="text" id="other-movie-text" placeholder="Something else..." disabled>
+                </div>
+                    
+                <button id="movie-next">That's what we're watching!🍿</button>
+            </div>
+
+            <div id="step6">
+                <div class="last-question">
+                    <h2>One last question...</h2>
+                    <p>Are we having sex?😏</p>
+                    <div class="final-buttons">
+                        <button id="sex-yes">Yes 😘</button>
+                        <button id="sex-no">No 😐</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step7">
+                <h2>Official Date Itinerary💌</h2>
+                <div class="itinerary">
+                    <p><strong>📆 Date:</strong> <span id="summary-date"></span></p>
+                    <p><strong>🕒 Time:</strong> <span id="summary-time"></span></p>
+                    <p><strong>🍽️ Dinner:</strong> <span id="summary-food"></span></p>
+                    <p><strong>✨ After Dinner:</strong> <span id="summary-activity"></span></p>
+                    <p><strong>🍿 Sweet Treat:</strong> <span id="summary-dessert"></span></p>
+                    <p><strong>🎬 Movie:</strong> <span id="summary-movie"></span></p>
+                </div>
+                <p> Can't wait! 💘</p>
+                <button id="sms-button">Send me our itinerary</button>
+            </div>
+                    
+                    
+        </div>
+    </div>
+    <audio id="music" loop>
+        <source src="music/soundtrack.mp3" type="audio/mpeg"
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
