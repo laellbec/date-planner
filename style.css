@@ -556,3 +556,7 @@ input[type="time"] {
     }
 }
 
+#sms-button,
+#email-button {
+    margin: 5px;
+}
