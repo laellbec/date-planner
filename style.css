@@ -137,7 +137,7 @@ input[type="time"] {
 }
 
 #date-next {
-    margin-top: 220px;
+    margin-top: 20px;
     padding: 20px 40px;
     font-size: 28px;
 }
@@ -556,4 +556,8 @@ input[type="time"] {
         color: black;
         background-color: white;
     }
+}
+
+body {
+    border: 10px solid red !important;
 }
