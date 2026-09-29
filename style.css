@@ -119,9 +119,7 @@ input[type="time"] {
     border-radius: 10px;
 }
 
-#date-next {
-    margin-top: 20px;
-}
+
 
 #date-next:hover {
     background-color: #FFB6C1;
@@ -188,7 +186,7 @@ input[type="time"] {
 }
 
 #food-next {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #food-next:hover {
@@ -264,7 +262,7 @@ input[type="time"] {
 }
 
 #movie-next {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #movie-next:hover {
@@ -332,7 +330,7 @@ input[type="time"] {
 }
 
 #activity-next {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #activity-next:hover {
@@ -483,7 +481,7 @@ input[type="time"] {
 }
 
 #dessert-next {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #dessert-next:hover {
@@ -558,6 +556,3 @@ input[type="time"] {
     }
 }
 
-body {
-    border: 10px solid red !important;
-}
