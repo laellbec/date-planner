@@ -375,7 +375,6 @@ sexNo.addEventListener("click", function() {
 sexYes.addEventListener("click", function() {
     alert("Official date approved!💖");
 
-    document.getElementById("summary-date").textContent = date.value;
     let timeParts = time.value.split(":");
     let hours = parseInt(timeParts[0]);
     let minutes = timeParts[1];
@@ -386,6 +385,16 @@ sexYes.addEventListener("click", function() {
     hours = hours === 0 ? 12 : hours;
 
     let formattedTime = hours + ":" + minutes + " " + ampm;
+
+    let dateParts = date.value.split("-");
+    let formattedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+        .toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
+
+    document.getElementById("summary-date").textContent = formattedDate;
 
     document.getElementById("summary-time").textContent = formattedTime;
 
@@ -423,10 +432,17 @@ smsButton.addEventListener("click", function() {
 
     let formattedTime = hours + ":" + minutes + " " + ampm;
 
+    let dateParts = date.value.split("-");
+    let formattedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+        .toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
     // Build the message
     let message =
         "💕 Our Date Itinerary 💕\n\n" +
-        "📅 Date: " + date.value + "\n" +
+        "📅 Date: " + formattedDate + "\n" +
         "⏰ Time: " + formattedTime + "\n" +
         "🍽️ Food: " + selectedFood;
 
@@ -453,6 +469,58 @@ smsButton.addEventListener("click", function() {
         "sms:?body=" + encodeURIComponent(message);
 });
 
+
 emailButton.addEventListener("click", function() {
-    window.location.href = "mailto:?subject=💕 Our Date Itinerary 💕&body=Test%20email";
+
+    // Convert time to 12-hour format
+    let timeParts = time.value.split(":");
+    let hours = parseInt(timeParts[0]);
+    let minutes = timeParts[1];
+    let ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours === 0 ? 12 : hours;
+
+    let formattedTime = hours + ":" + minutes + " " + ampm;
+
+    let dateParts = date.value.split("-");
+    let formattedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+        .toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        });
+
+    // Build the email body
+    let message =
+        "💕 Our Date Itinerary 💕\n\n" +
+
+        "📅 Date: " + formattedDate + "\n" +
+
+        "⏰ Time: " + formattedTime + "\n" +
+
+        "🍽️ Food: " + selectedFood;
+
+    if (selectedRestaurant.trim() !== "") {
+        message += " - " + selectedRestaurant;
+    }
+
+    message += "\n" +
+        "🎯 Activity: " + selectedActivity;
+
+    if (selectedActivity === "Baking") {
+        message += "\n🍫 Sweet Treat: " + selectedRecipe;
+    } else {
+        message += "\n🍫 Sweet Treat: " + selectedDessert;
+
+        if (bakingRequest.trim() !== "") {
+            message += " - " + bakingRequest;
+        }
+    }
+
+    message += "\n🎬 Movie: " + selectedMovie;
+
+    window.location.href =
+        "mailto:?subject=" + encodeURIComponent("💕 Our Date Itinerary 💕") +
+        "&body=" + encodeURIComponent(message);
 });
